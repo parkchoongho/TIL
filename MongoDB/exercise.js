@@ -29,6 +29,7 @@ Course.find(
   .sort({ price: -1 })
   .then(result => console.log(result))
   .catch(error => console.log(error));
+// .or([{tags: "backend"}, {tags: "frontend"}])
 
 Course.find({ price: { $gte: 15 }, name: { $regex: /js/i } })
   .then(result => console.log(result))
