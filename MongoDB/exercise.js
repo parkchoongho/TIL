@@ -23,7 +23,7 @@ Course.find(
   .catch(error => console.log(error));
 
 Course.find(
-  { isPublished: true, tags: { $in: ["backend", "frotend"] } },
+  { isPublished: true, tags: { $in: ["backend", "frontend"] } },
   { name: 1, price: 1 }
 )
   .sort({ price: -1 })
