@@ -31,8 +31,8 @@ const Course = mongoose.model("Course", courseSchema);
 // Dpcument 추가하기 CREATE
 async function create() {
   const author = new Author({
-    name: "Song",
-    email: "song@gmail.com"
+    name: "Park",
+    email: "pchyo92@gmail.com"
   });
   const course = new Course({
     name: "Express API",
@@ -47,6 +47,7 @@ async function create() {
   const courseSaveResult = await course.save();
   console.log(courseSaveResult);
 }
+// create();
 async function read() {
   try {
     const autors = await Author.find();
@@ -82,4 +83,26 @@ async function read() {
     console.lof(error);
   }
 }
-read();
+// read();
+
+// UPDATE
+// 1. 데이터를 조회해서 수정한 후 저장
+// 2. 바로 수정하는 방법
+async function update() {
+  // 첫 번째 방법
+  const course = await Course.findById("5dc25975993e6b15a0bf01c9");
+  course.name = "JSON Array";
+  await course.save();
+}
+// update();
+async function anotherUpdate() {
+  const updated = await Course.updateMany({ isPublished: true }, { price: 15 });
+  console.log(updated);
+}
+// anotherUpdate();
+
+async function remove() {
+  const deleted = await Course.deleteOne({ _id: "5dc36964c8a55d22c8849322" });
+  console.log(deleted);
+}
+remove();
