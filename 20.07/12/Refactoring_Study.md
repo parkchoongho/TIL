@@ -1,18 +1,30 @@
 ## 2020.07.12 Refactoring 스터디
 
 - Function Signature 용어 기억하기
+  - 해당 function에 해당하는 모든것을 의미한다. (ex parameter와 그 타입, 리턴값과 그 타입, exceptions, oop에서의 method 접근권한 등등)
+  - static method란? https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/static
+  - static method는 클래스의 인스턴스에서 호출할 수 없다. 대신 클래스 그 자체에서 호출가능하다.
+
 - 리버스 프록시가 왜 '리버스'인가?
+  - https://www.imperva.com/learn/performance/reverse-proxy/
+  - 리버스 프록시는 자기가 실제 endpoint인 것처럼 작동합니다.
+  - 포워드 프록시는 클라이언트의 요청을 대리로 수행하지만 리버스 프록시는 서버의 요청을 대리로 수행합니다. (그래서 이름이 리버스?(Reverse))
 -  https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching 해당 글 읽기
 - Cache Invalidation
   - 정확하게 어떤 문제들이 해당되는가?
 - Off-By-One
+  - 알고리즘 관련 문제들 풀 때, index 1차이로 버그가 발생하는 경우를 이렇게 말한다. (프로그래밍은 정교해야하기에 이런 1 차이로 큰 오류를 야기하기 때문!)
 - Indirection 효과
   - **All Problems in computer science can be solved by another level of indirection**
   - 이 문구가 의미하는 바는?
-- Primitive Obsession => 지나치게 원시타입만 사용하려는 것을 의미한다. (내가 원하는 타입을 만들어서 활용하는 것이 중요. => 클래스를 만드는 것을 두려워말라)
-- 함수를 명령으로 바꾸기 => 함수를 클래스의 메서드로 바꿔라.
+- Primitive Obsession 
+  - 지나치게 원시타입만 사용하려는 것을 의미한다. (내가 원하는 타입을 만들어서 활용하는 것이 중요. => 클래스를 만드는 것을 두려워말라)
+- 함수를 명령으로 바꾸기 
+  - 이 구문의 의미는 함수를 클래스의 메서드로 바꿔라!
 - For 루프를 Pipeline으로 바꾸기
+  - for문을 map이나 reduce등과 같은 형태로 변경
 - functools.partial 써볼것, 함수형 언어의 currying이란?
+  - https://sujinlee.me/currying-in-functional-javascript/
 - 전역변수의 단점 4가지
   - Global and static objects cause implicit dependencies/coupling, thus they break the idea of encapsulation.
   - It's hard to reason about them - logical scope for understanding behaviour of these objects is expanded to the whole program.
