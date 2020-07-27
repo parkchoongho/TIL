@@ -1,17 +1,16 @@
 const net = require("net");
 
-//var client = net.connect({path: '/tmp/nodejs.sock'},function() { // UNIX domain sockets  사용시
-const client = net.connect({ port: 8124 }, function () {
-  //'connect' listener
+const client = net.connect({ port: 3000 }, function () {
   console.log("Connected To Server!");
-  const data = "world!";
+
+  const data =
+    "GET / HTTP/1.1\nContent-Type: choongho/form\nChoongHo-Message: I am Choongho!";
   console.log(`Client Send Data: ${data}`);
   client.write(data);
 });
 
-//서버로 부터 받은 데이터
 client.on("data", function (data) {
-  console.log("Client Get data: ${} " + data.toString());
+  console.log(`Client Get Data: ${data.toString()}`);
   client.end();
 });
 
